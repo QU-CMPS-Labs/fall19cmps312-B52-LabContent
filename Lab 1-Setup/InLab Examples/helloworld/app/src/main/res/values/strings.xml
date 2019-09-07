@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Whatsapp</string>
+    <string name="login_btn_text">Login</string>
+    <string name="say_hello">Say Hello</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="add">ADD</string>
+</resources>
