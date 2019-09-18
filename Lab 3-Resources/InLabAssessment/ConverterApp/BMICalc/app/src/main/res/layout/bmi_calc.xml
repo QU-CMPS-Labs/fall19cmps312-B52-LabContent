@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="5dp"
+        android:text="Weight (Kg)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weight_edt"
+        app:layout_constraintEnd_toStartOf="@+id/weight_edt"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:text="Height (m)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/height_edt"
+        app:layout_constraintEnd_toStartOf="@+id/height_edt"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="134dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="39dp"
+        android:text="BMI Calculator"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/weight_edt"
+        app:layout_constraintStart_toStartOf="@+id/weight_edt" />
+
+    <EditText
+        android:id="@+id/weight_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/height_edt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/height_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="207dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="115dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/bmi_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:onClick="calculateBMI"
+        android:text="Calculate"
+        app:layout_constraintStart_toStartOf="@+id/height_edt"
+        app:layout_constraintTop_toBottomOf="@+id/height_edt" />
+
+    <TextView
+        android:id="@+id/bmi_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/categories_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height_edt" />
+
+    <TextView
+        android:id="@+id/categories_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bmi_tv" />
+</androidx.constraintlayout.widget.ConstraintLayout >
