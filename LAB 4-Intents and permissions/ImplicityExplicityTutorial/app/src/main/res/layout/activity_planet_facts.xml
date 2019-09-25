@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="1"
+    tools:context="com.cmps312.implicityexplicitytutorial.PlanetFactsActivity">
+    <!-- TODO make sure the package name is your projects package name. You can find it inside your activity-->
+
+    <Button
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/ic_dialog_email"
+        android:onClick="sendEmail"
+        android:text="@string/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chonburi"
+        android:onClick="onNextBtnClicked"
+        android:text="@string/next_planet"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+
+        android:id="@+id/planetImage"
+        android:layout_width="145dp"
+        android:layout_height="151dp"
+        android:layout_gravity="center"
+        android:src="@drawable/jupiter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/factsTv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/inconsolata"
+        android:scrollbars="vertical"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/next_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planetImage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
