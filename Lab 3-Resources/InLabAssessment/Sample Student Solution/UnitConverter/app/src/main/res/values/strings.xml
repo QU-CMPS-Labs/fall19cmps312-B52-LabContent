@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Unit Converter App</string>
+    <string name="convert">Convert</string>
+    <string name="qr">QR</string>
+    <string name="usd">USD</string>
+    <string name="_100">100</string>
+    <string name="currency_converter">Currency Converter</string>
+    <string name="_365">365</string>
+</resources>
