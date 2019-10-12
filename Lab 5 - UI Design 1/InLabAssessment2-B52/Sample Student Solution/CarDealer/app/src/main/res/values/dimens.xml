@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="car_height">225dp</dimen>
+    <dimen name="car_width">0dp</dimen>
+    <dimen name="flag_height">185dp</dimen>
+    <dimen name="flag_width">224dp</dimen>
+    <dimen name="car_height_land">192dp</dimen>
+    <dimen name="car_width_land">406dp</dimen>
+    <dimen name="flag_height_land">217dp</dimen>
+    <dimen name="flag_width_land">201dp</dimen>
+</resources>
