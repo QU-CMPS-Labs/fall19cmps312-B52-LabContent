@@ -29,7 +29,6 @@ public class MyFragmentA extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        TextView textView;
         final EditText inputEdt;
         Button okBtn;
 

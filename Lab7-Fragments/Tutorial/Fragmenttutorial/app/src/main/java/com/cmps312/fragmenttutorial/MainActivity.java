@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Declare
 
-        MyFragmentB fragmentB = new MyFragmentB();
+        MyFragmentB fragmentB = MyFragmentB.newInstance("Abdulahi");
 
         //get the fragment manger to inject it
 
