@@ -35,7 +35,6 @@ public class MyFragmentA extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_a, container, false);
 
-        textView = rootView.findViewById(R.id.textView);
         inputEdt = rootView.findViewById(R.id.input_edt);
         okBtn = rootView.findViewById(R.id.ok_btn);
 
