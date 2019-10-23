@@ -9,12 +9,13 @@
     <fragment
         android:id="@+id/fragment"
         android:name="com.cmps312.fragmenttutorial.MyFragmentA"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="414dp"
+        android:layout_height="353dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout="@layout/fragment_a" />
 </androidx.constraintlayout.widget.ConstraintLayout>
