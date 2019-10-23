@@ -17,7 +17,30 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.083" />
+
+    <EditText
+        android:id="@+id/input_edt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="211dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ok_btn"
+        android:layout_width="182dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="53dp"
+        android:text="@android:string/ok"
+        app:layout_constraintStart_toStartOf="@+id/input_edt"
+        app:layout_constraintTop_toBottomOf="@+id/input_edt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
