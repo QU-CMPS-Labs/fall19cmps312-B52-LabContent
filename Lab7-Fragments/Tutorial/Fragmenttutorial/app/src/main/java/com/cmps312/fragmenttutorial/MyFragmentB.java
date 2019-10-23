@@ -2,13 +2,13 @@ package com.cmps312.fragmenttutorial;
 
 
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 
 /**
@@ -16,8 +16,9 @@ import android.view.ViewGroup;
  */
 public class MyFragmentB extends Fragment {
 
-    public static final String ARGS_NAME ="name";
+    public static final String ARGS_NAME = "name";
     private String name;
+
     public MyFragmentB() {
         // Required empty public constructor
     }
@@ -28,8 +29,6 @@ public class MyFragmentB extends Fragment {
         args.putString(ARGS_NAME, name);
 
         MyFragmentB fragment = new MyFragmentB();
-
-
         fragment.setArguments(args);
         return fragment;
     }
@@ -37,7 +36,6 @@ public class MyFragmentB extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         name = getArguments().getString(ARGS_NAME);
     }
 
@@ -45,7 +43,13 @@ public class MyFragmentB extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_b, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_b, container, false);
+
+        TextView textView = rootView.findViewById(R.id.textView2);
+        textView.setText(textView.getText().toString() + " - " +name);
+        return rootView;
     }
+
+    inter
 
 }
