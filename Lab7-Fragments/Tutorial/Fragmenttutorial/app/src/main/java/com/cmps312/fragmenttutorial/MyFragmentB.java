@@ -69,6 +69,7 @@ public class MyFragmentB extends Fragment {
 
     interface onMyFragmentBInteraction {
         void sayHello(String message);
+        void replaceFragment();
     }
 
 }

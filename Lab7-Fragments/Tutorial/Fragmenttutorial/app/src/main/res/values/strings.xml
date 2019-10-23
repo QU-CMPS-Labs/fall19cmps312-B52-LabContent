@@ -5,4 +5,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_a">FRAGMENT A</string>
     <string name="fragment_b">FRAGMENT B</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_settings">Settings</string>
 </resources>
