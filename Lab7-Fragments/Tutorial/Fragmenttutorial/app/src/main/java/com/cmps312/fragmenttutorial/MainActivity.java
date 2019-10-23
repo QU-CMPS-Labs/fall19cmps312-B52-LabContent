@@ -1,11 +1,11 @@
 package com.cmps312.fragmenttutorial;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.os.Bundle;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity implements MyFragmentB.onMyFragmentBInteraction {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +23,10 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.place_holder, fragmentB)
                 .commit();
 
+    }
+
+    @Override
+    public void sayHello(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
