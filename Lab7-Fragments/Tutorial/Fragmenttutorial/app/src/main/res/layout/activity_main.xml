@@ -6,6 +6,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <fragment
         android:id="@+id/fragment"
         android:name="com.cmps312.fragmenttutorial.MyFragmentA"
