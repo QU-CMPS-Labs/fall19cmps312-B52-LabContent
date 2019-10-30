@@ -20,15 +20,20 @@ public class MyDBHelper extends SQLiteOpenHelper implements StudentContract {
 
     public MyDBHelper(Context context) {
         super(context, DB_NAME, null, VERSION);
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(SQL_CREATE_STUDENT_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if(newVersion > oldVersion){
+            db.execSQL(SQL_DROP_STUDENT_TABLE);
+            onCreate(db);
+        }
 
     }
 }
