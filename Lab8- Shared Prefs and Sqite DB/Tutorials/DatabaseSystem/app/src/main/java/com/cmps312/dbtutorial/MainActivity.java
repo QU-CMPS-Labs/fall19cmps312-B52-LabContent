@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.cmps312.dbtutorial.models.Student;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
 
