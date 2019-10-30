@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EmployeeApp</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="result_area">Result will be displayed here</string>
+    <string name="result">Result</string>
+    <string name="getall">GetAll</string>
+    <string name="search">Search</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="employee_form">Employee Form</string>
+    <string name="query_form">Employee Query Form</string>
+    <string name="enter_employee_name">Enter Emplyee Name</string>
+    <string name="enter_employee_id">Enter Employee ID</string>
+
+</resources>
