@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void registerUser(View view) {
 
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
     }
 
     //Read from shared preferences
