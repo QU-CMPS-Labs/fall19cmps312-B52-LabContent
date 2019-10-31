@@ -1,6 +1,7 @@
 package com.cmps312.dbtutorial;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         resultTv = findViewById(R.id.result_tv);
         nameEdt = findViewById(R.id.nameEdt);
+
+        Log.d("Thisis my tag", "onCreate: ");
     }
 
     public void onClick(View view) {
@@ -38,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
                 //sdfad
             case R.id.update_btn:
-
+                Toast.makeText(this, "update student", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.delete_btn:
+                Toast.makeText(this, "delete student", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.getall_btn:
