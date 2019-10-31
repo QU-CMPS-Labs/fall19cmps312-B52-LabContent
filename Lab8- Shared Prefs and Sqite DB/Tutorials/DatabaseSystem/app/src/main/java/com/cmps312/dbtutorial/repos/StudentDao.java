@@ -91,7 +91,7 @@ public class StudentDao implements StudentContract {
         //change to a student object
 
         Student student = new Student();
-        
+
         student.setName(cursor.getString(cursor.getColumnIndex(StudentTable.COLUMN_NAME_STUDENT_NAME)));
         student.setStudentId(cursor.getInt(cursor.getColumnIndex(StudentTable.COLUMN_NAME_SID)));
 
