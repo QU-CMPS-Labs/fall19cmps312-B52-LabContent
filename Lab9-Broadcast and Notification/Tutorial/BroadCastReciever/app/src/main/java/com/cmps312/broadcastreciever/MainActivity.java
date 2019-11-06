@@ -5,6 +5,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -64,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements MyReceiver.Intera
     }
 
     private void createNotification(String message) {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 101, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+
         NotificationManagerCompat notificationManagerCompat =
                 NotificationManagerCompat.from(this);
 
@@ -73,7 +80,9 @@ public class MainActivity extends AppCompatActivity implements MyReceiver.Intera
                 .Builder(this, MAIN_CHANNEL)
                 .setSmallIcon(R.drawable.ic_backup_black_24dp)
                 .setContentTitle("Connection Notification")
+                .setContentIntent(pendingIntent)
                 .setContentText(message)
+                .setAutoCancel(true)
                 .build();
 
 
