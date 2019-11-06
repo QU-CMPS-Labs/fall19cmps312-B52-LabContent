@@ -8,24 +8,40 @@ import android.widget.Toast;
 
 public class MyReceiver extends BroadcastReceiver {
 
+    InteractionInterface anInterface;
+    public static final String MY_ACTION = "com.cmps312.broadcastreciever.shout";
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        if(ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())){
+        anInterface = (InteractionInterface) context;
+        if (ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())) {
 
             boolean noConnection = intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);
-            if(noConnection){
-                Toast.makeText(context, "No Connection Changed", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
+            if (noConnection) {
+                anInterface.update("No Connection Changed");
+//                Toast.makeText(context, "No Connection Changed", Toast.LENGTH_SHORT).show();
+            } else {
+                anInterface.update("Connected to Internet ");
                 Toast.makeText(context, "Connection", Toast.LENGTH_SHORT).show();
             }
         }
 
 
-        if(intent.getAction().equals("com.cmps312.broadcastreciever.shout")){
-            intent.getBooleanExtra("MyExtra" , false);
+        if (intent.getAction().equals(MY_ACTION)) {
+            intent.getBooleanExtra("MyExtra", false);
         }
     }
+
+    interface InteractionInterface {
+        void update(String messaeg);
+    }
 }
+
+
+
+
+
+
+
+

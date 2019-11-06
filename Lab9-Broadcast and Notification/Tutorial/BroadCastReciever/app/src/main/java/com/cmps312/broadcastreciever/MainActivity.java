@@ -2,13 +2,17 @@ package com.cmps312.broadcastreciever;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyReceiver.InteractionInterface {
 
     MyReceiver receiver;
     @Override
@@ -42,5 +46,12 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("MyEXTRA" , false);
         sendBroadcast(intent);
 
+    }
+
+    @Override
+    public void update(String message) {
+        TextView tv = findViewById(R.id.textview);
+
+        tv.setText(message);
     }
 }

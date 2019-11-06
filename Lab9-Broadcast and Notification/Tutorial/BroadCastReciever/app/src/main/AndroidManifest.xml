@@ -14,7 +14,7 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.cmps312.broadcastreciever.shout"/>
+                <action android:name="com.cmps312.broadcastreciever.shout" />
             </intent-filter>
         </receiver>
 
