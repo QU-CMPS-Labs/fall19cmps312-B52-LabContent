@@ -20,10 +20,8 @@ public class MyReceiver extends BroadcastReceiver {
             boolean noConnection = intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, false);
             if (noConnection) {
                 anInterface.update("No Connection Changed");
-//                Toast.makeText(context, "No Connection Changed", Toast.LENGTH_SHORT).show();
             } else {
                 anInterface.update("Connected to Internet ");
-                Toast.makeText(context, "Connection", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -36,6 +34,8 @@ public class MyReceiver extends BroadcastReceiver {
     interface InteractionInterface {
         void update(String messaeg);
     }
+
+
 }
 
 

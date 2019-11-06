@@ -1,7 +1,10 @@
 package com.cmps312.broadcastreciever;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +15,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.cmps312.broadcastreciever.App.MAIN_CHANNEL;
+
 public class MainActivity extends AppCompatActivity implements MyReceiver.InteractionInterface {
 
+    int mainCount=0;
     MyReceiver receiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +57,41 @@ public class MainActivity extends AppCompatActivity implements MyReceiver.Intera
     @Override
     public void update(String message) {
         TextView tv = findViewById(R.id.textview);
-
         tv.setText(message);
+
+
+        createNotification(message);
+    }
+
+    private void createNotification(String message) {
+        NotificationManagerCompat notificationManagerCompat =
+                NotificationManagerCompat.from(this);
+
+
+        //create a notification
+        Notification notification = new NotificationCompat
+                .Builder(this, MAIN_CHANNEL)
+                .setSmallIcon(R.drawable.ic_backup_black_24dp)
+                .setContentTitle("Connection Notification")
+                .setContentText(message)
+                .build();
+
+
+        notificationManagerCompat.notify(mainCount++, notification);
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
