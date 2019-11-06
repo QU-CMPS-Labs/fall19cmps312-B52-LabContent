@@ -1,28 +1,22 @@
-package com.cmps312.simplebroadcastreciever;
+package com.cmps312.broadcastreciever;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
+import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class MainActivity extends AppCompatActivity {
 
-import org.w3c.dom.Text;
-
-public class MainActivity extends AppCompatActivity implements MyBroadcastReceiver.BroadCastInteractionInterface {
-
-    MyBroadcastReceiver receiver;
-    TextView connectionStatusTv;
-    
+    MyReceiver receiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        receiver = new MyBroadcastReceiver();
-        connectionStatusTv = findViewById(R.id.connection_status);
+        receiver = new MyReceiver();
 
     }
 
@@ -32,8 +26,10 @@ public class MainActivity extends AppCompatActivity implements MyBroadcastReceiv
 
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+
         this.registerReceiver(receiver, filter);
     }
+
 
     @Override
     protected void onStop() {
@@ -41,8 +37,10 @@ public class MainActivity extends AppCompatActivity implements MyBroadcastReceiv
         this.unregisterReceiver(receiver);
     }
 
-    @Override
-    public void showConnectionStatus(String status) {
-        connectionStatusTv.setText(status);
+    public void sendMyBroadCast(View view) {
+        Intent intent = new Intent("com.cmps312.broadcastreciever.shout");
+        intent.putExtra("MyEXTRA" , false);
+        sendBroadcast(intent);
+
     }
 }
