@@ -31,14 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void startThread(View view) {
         Thread thread = new Thread(new Runnable() {
+
             @Override
             public void run() {
+
                 for (int i = 0; i < 10; i++) {
+
                     final int current = i;
 
                     //3rd way
                     Message message = new Message();
-                    message.arg1 = 123;
+                    message.arg1 = current;
 
                     handler.sendMessage(message);
 
