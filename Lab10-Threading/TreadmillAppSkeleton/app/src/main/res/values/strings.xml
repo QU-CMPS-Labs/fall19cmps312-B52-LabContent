@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TreadmillApp</string>
+    <string name="run_in_runnable_mode">Run in -Runnable Mode</string>
+    <string name="run_in_asynctask_mode">Run in -AsyncTask Mode</string>
+    <string name="stop_runner">Stop Runner</string>
+    <string name="todo">TODO</string>
+</resources>
