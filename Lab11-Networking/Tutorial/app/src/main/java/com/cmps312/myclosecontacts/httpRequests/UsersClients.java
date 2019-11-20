@@ -16,4 +16,5 @@ public interface UsersClients {
     @GET("/api")
     Call<Result> getUsers(@Query("results") String results,
                           @Query("format") String format);
+
 }

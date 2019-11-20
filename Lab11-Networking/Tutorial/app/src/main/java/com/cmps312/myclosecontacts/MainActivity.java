@@ -6,6 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.cmps312.myclosecontacts.httpRequests.UsersClients;
+import com.cmps312.myclosecontacts.models.Result;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.Retrofit.Builder;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.cmps312.myclosecontacts.httpRequests.UsersClients.BASE_URL;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,6 +29,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void downloadUsers(View view) {
-        Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
+        //step 1
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        //step 2
+        UsersClients client = retrofit.create(UsersClients.class);
+
+        //step 3
+        Call<Result> call = client.getUsers("5", "json");
+
+
+        //step 4, is wait for the result
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Failure", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
     }
 }
