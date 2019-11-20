@@ -69,7 +69,7 @@ public class User {
         @NonNull
         @Override
         public String toString() {
-            return title + "" + first + " " + last;
+            return title + " " + first + " " + last;
         }
     }
 

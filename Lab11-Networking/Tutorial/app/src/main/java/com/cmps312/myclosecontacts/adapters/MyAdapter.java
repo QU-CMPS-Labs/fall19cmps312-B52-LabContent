@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cmps312.myclosecontacts.R;
 import com.cmps312.myclosecontacts.models.User;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -39,6 +40,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.email.setText(users.get(position).getEmail());
         holder.name.setText(users.get(position).getName().toString());
+
+        Picasso.get()
+                .load(users.get(position).getPicture().getLarge())
+                .into(holder.userImage);
     }
 
     @Override
