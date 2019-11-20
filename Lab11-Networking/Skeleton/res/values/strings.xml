@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Top Fans</string>
+    <string name="todo">TODO</string>
+    <string name="json_download">JSON Download</string>
+</resources>
