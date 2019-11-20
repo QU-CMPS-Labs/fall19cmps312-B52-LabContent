@@ -11,6 +11,10 @@ public class Result {
     @Expose
     private ArrayList<User> users;
 
+    public Result() {
+
+    }
+
     public ArrayList<User> getUsers() {
         return users;
     }
