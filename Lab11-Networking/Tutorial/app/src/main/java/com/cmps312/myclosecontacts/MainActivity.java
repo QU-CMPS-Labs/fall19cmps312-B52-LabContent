@@ -43,14 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         //step 4, is wait for the result
-
         call.enqueue(new Callback<Result>() {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
 
                 Result result = response.body();
 
-                Toast.makeText(MainActivity.this, result.getUsers().get(0).getEmail(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, result.getUsers().get(0).getName().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
