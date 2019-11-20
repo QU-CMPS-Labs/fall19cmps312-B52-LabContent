@@ -47,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Result>() {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
-                Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+
+                Result result = response.body();
+
+                Toast.makeText(MainActivity.this, result.getUsers().get(0).getEmail(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
